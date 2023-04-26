@@ -9,7 +9,15 @@ def whisper_stt(path_to_data:str,
                 path_to_save:str,
                 model_name:str='small',
                 ) -> None:
+    """_summary_
+
+    Args:
+        path_to_data (str): a path to raw audio samples
+        path_to_save (str): a path to a directory for results. Directory must exist.
+        model_name (str, optional): whisper model name (available: tiny, base, small, medium, large). Defaults to 'small'.
+    """
     model = whisper.load_model(model_name)
+    
     for audio in tqdm(os.listdir(path_to_data)):
         audio_file = os.path.join(path_to_data, audio)
         transcription = model.transcribe(audio_file, language='ru')
