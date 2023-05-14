@@ -1,6 +1,7 @@
 import re
 import os
 import librosa
+import click
 import soundfile as sf
 import torch
 from pydub import AudioSegment
@@ -23,7 +24,15 @@ DS_KEYWORD_DICT = {
 SR = 16000
 
 
+@click.command()
+@click.argument("path_to_ogg_file", type=click.Path())
+@click.argument("path_to_wav_file", type=click.Path())
 def ogg2wav(path_to_ogg_file: str, path_to_wav_file: str):
+    """ Transform .ogg to .wav
+    :param path_to_ogg_file:
+    :param path_to_wav_file:
+    :return:
+    """
     wav, sr = librosa.load(path_to_ogg_file)
     sf.write(path_to_wav_file, wav, SR, 'PCM_16')
 
@@ -122,3 +131,7 @@ class Text:
                 text_chunks.append(tmp + ".")
                 tmp = sent
         return text_chunks
+
+
+if __name__ == '__main__':
+    ogg2wav()

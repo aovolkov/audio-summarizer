@@ -1,0 +1,8 @@
+stages:
+  preprocess_audio:
+    cmd: python src/data/utils.py data/raw/test.ogg data/processed/test.wav
+    deps:
+      - data/raw/test.ogg
+      - src/data/utils.py
+    outs:
+      - data/processed/test.wav

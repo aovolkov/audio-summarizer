@@ -2,7 +2,6 @@ import os
 import wave
 import json
 import torch
-from tqdm import tqdm
 from vosk import Model, KaldiRecognizer
 from tqdm.notebook import tqdm
 from pydub import AudioSegment
