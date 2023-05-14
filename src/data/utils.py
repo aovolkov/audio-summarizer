@@ -122,3 +122,4 @@ class Text:
                 text_chunks.append(tmp + ".")
                 tmp = sent
         return text_chunks
+

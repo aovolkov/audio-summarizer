@@ -1,0 +1,9 @@
+[core]
+    remote = origin
+    autostage = false
+['remote "origin"']
+    url = s3://249ef297-audio-summarixer
+    endpointurl = https://s3.timeweb.com
+    access_key_id = ce96468
+    secret_access_key =
+    
