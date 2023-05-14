@@ -10,3 +10,7 @@ bert-extractive-summarizer==0.10.1
 torch==2.0.0
 librosa==0.10.0
 sentencepiece==0.1.99
+dvc==2.56.0
+dvc-s3==2.22.0
+
+
